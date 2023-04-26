@@ -23,13 +23,15 @@ class AppiumConfig:
 class TestAddProduct(AppiumConfig):
     def test_add_product(self):
         self.driver.find_element(AppiumBy.XPATH,"//android.widget.TextView[@text='Skip']").click()
+        self.driver.find_element(AppiumBy.XPATH,"//android.widget.TextView[@content-desc='Women']").click()
+
         # swipe until //luxe presence
 
         # while len(self.driver.find_elements(AppiumBy.XPATH, "//*[@text='Luxe']")) == 0:
-        #     self.driver.swipe(699,743,677,1695,1000)
-        para_dic = {"strategy": AppiumBy.ANDROID_UIAUTOMATOR, "selector": 'UiSelector().text("Luxe")'}
-        self.driver.execute_script("mobile: scroll", para_dic)
-        self.driver.find_element(AppiumBy.XPATH,"//android.widget.TextView[@text='Luxe']").click()
+        # #     self.driver.swipe(699,743,677,1695,1000)
+        # para_dic = {"strategy": AppiumBy.ANDROID_UIAUTOMATOR, "selector": 'UiSelector().text("Luxe")'}
+        # self.driver.execute_script("mobile: scroll", para_dic)
+        # self.driver.find_element(AppiumBy.XPATH,"//android.widget.TextView[@text='Luxe']").click()
 
         time.sleep(5)
 
